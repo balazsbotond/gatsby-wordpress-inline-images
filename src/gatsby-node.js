@@ -149,6 +149,9 @@ const replaceImage = async ({
 	reporter,
 	$,
 }) => {
+	if (!thisImg.attr("src")) {
+	  return;
+	}
 	// find the full size image that matches, throw away WP resizes
 	const parsedUrlData = parseWPImagePath(thisImg.attr("src"))
 	const url = parsedUrlData.cleanUrl
